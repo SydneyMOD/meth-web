@@ -1,0 +1,82 @@
+// ---------------------------------
+//            init.styl
+//                  made by katabame
+// LICENSE: WTFPL
+//
+// Usage: @import init
+//         at your own styl file.
+//
+// IF YOU IMPOROVED, LET ME KNOW.
+// I WILL USE FUCKING THAT.
+// ---------------------------------
+
+// ---------------------------------
+//      OPTIMIZED SIZE LISTS
+// 100% = 1em = 1rem = 10px = 7.5pt
+// ---------------------------------
+
+// load fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700")
+@import url("https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css")
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css")
+
+// add vender prefixes
+vender(prop, arg)
+	-o-{prop}: arg
+	-ms-{prop}: arg
+	-moz-{prop}: arg
+	-webkit-{prop}: arg
+	{prop}: arg
+
+// viewport w/h
+vp(target_px, viewport_size)
+	return target_px / viewport_size * 100
+
+::selection
+	background-color: #9E9E9E
+	color: #FAFAFA
+
+html
+	width: 100%
+	height: 100%
+	font-size: 62.5%
+
+body
+	width: 100%
+	height: 100%
+	background-color: #f0f0f0
+	display: block
+	font-size: 1.6rem
+	font-family: 'Montserrat', 'Rounded M+ 1c', 'Noto Sans Japanese'
+	margin: 0
+
+
+a
+	text-decoration: none
+	color: #2196F3
+	transition: .2s
+	&:hover
+		color: #E91E63
+
+.no-select
+	vender(user-select, none)
+
+
+// parallax effect
+#parallax
+	height: 100vh
+	overflow-x: hidden
+	overflow-y: auto
+	vender(perspective, 300px)
+.layer-fore
+	transform: translateZ(90px) scale(.7)
+	z-index: 4
+.layer-base
+	transform: translateZ(0)
+	z-index: 3
+.layer-back
+	transform: translateZ(-300px) scale(2)
+	z-index: 2
+.layer-deep
+	transform: translateZ(-600px) scale(3)
+	z-index: 1

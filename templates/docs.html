@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% load markdown_deux_tags %}
+{% block title %}{{ file_name }} :: meth docs{% endblock %}
+{% block content %}
+<div class="markdown">
+	{{ markdown_string | markdown }}
+</div>
+{% endblock %}
